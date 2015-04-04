@@ -1,0 +1,259 @@
+/* index page */
+#index-logo {
+	width: 200px;
+    height: 200px;
+	text-align:center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* general page */
+ #wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -60px;
+}
+
+#push{height: 60px;}
+
+@media (max-width: 767px) {
+#nav-bottom {
+}
+}
+
+#nav-bottom
+{
+	display:block;
+	background:#00A450;
+	width: 100% !important;
+	height: 60px;
+	line-height:60px;
+	text-align:center;
+	z-index:99999;
+	vertical-align:middle;
+}
+#nav-bottom .btn-navBottom
+{
+	width:100%;
+	display:block;
+}
+#nav-bottom .btn-navBottom img
+{
+}
+
+#nav-top
+{
+	border:0;
+	background:white;
+	height:50px;
+}
+#nav-top #brand-logo{
+	padding:0;
+	padding-top:14px;
+	padding-left:14px;
+}
+#brand-logo img
+{
+	height:20px;
+}
+#nav-top #brand-title a
+{
+	text-decoration:none;
+	color:#00a350;
+	font-weight:bold;
+}
+#nav-top .navbar-brand
+{
+	position: absolute;
+    width: 100%;
+	top:0;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+#nav-top .navbar-toggle{
+	border:0;
+}
+#nav-top .navbar-toggle .icon-bar
+{
+	color:#00a652;
+	background:#00a652;
+}
+#nav-top .navbar-right
+{
+	margin-top:-5px;
+	background:white;
+}
+
+#subHeader{
+	text-align:center;
+	padding:0 0 8px 0;
+	margin-top:-5px;
+	font-size:1.2em;
+	color:#f7941d;
+}
+
+#mainContent
+{
+	padding-top:50px;
+}
+
+/* add page */
+#listCategory
+{
+}
+
+#listCategory .list-group
+{
+	margin:0;
+}
+#listCategory .list-group-item
+{
+	padding:9px;
+	border:0;
+	border-bottom:1px solid #d2d2d4;
+	background:#f3f3f5;
+	text-align:center;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+}
+
+#listCategory  .list-group-item img
+{
+	height:120px;
+	margin-bottom:4px;
+}
+
+#listCategory .list-group-item-heading
+{
+	color:#f7941d;
+	margin:0; padding:0;
+}
+
+#addExpiryPreview, #viewExpiryPreview
+{
+	max-width:320px !important;
+	margin:0 auto;
+}
+#viewRecipePreview
+{
+	max-width:480px !important;
+	margin:0 auto;
+}
+
+#btnAddExpiryRecord
+{
+	margin-top:1em;
+}
+#btnAddExpiryRecord img
+{
+	width:150px;
+}
+
+#form-addExpiry .form-control-feedback
+{
+	margin-right:5px;
+	color:#aaa;
+}
+#form-addExpiry input, #form-addExpiry select
+{
+	background:#eee;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border:0;
+	border-bottom:1px solid #ddd;
+	text-align:center;
+	cursor:pointer;
+	height:3em;
+	width:100%;
+	font-size:1.2em;
+}
+#form-addExpiry input:focus, #form-addExpiry select:focus
+{
+	border-color: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    outline: 0 !important;
+}
+
+#viewExpiryTable
+{
+	max-width:320px;
+	margin:30px auto;
+	background:#eee;
+	color:#888;
+	font-size:120%;
+}
+
+#viewExpiryTable td
+{
+	width:50%;
+}
+
+.expiryInDayHeader
+{
+	font-size:120%;
+	color:#888;
+	text-align:center;
+	margin-bottom:0.8em;
+	margin-top:1em;
+}
+
+.expiryInDayList .thumbnail
+{
+}
+/*
+.expiryInDayList .thumbnail img
+{
+	width:auto; height:120px;
+	object-fit:cover;
+	overflow:hidden;
+}*/
+
+.expiryInDayList .thumbnail p
+{
+	text-align:center;
+	margin:0;
+	padding:0;	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+.modal-open .modal {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  overflow-y: scroll;
+}
+
+
+#btnViewRecipe img, #btnShare img
+{
+	width:150px;
+}
+
+#viewRecipeTitle{
+	text-align:center;
+	padding:1em 0 8px 0;
+	font-size:1.2em;
+	color:#f7941d;
+}
+#viewRecipeContent{
+	margin:0 auto;
+	max-width:480px;
+}
+#viewRecipeContent pre{
+	text-align:left;
+	background:none;
+	border:0;
+	color:#333333;
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:14px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="home.html">KitchenSink</a>
+        </div>
+      </div>
+    </nav>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-lg-12">
+				<p class="bg-warning">All call is async. adapter dom seems to work fastest among all. Seems like query plugin have problem working with webkit adapter even if it is just included.</p>
+				<br />
+				
+				<a class="btn btn-block btn-default" id="btnCreateList">Create List</a>
+				<a class="btn btn-block btn-default" id="btnSelectList">Select List</a>
+				<a class="btn btn-block btn-default" id="btnFilterList">Select List by Filter</a>
+				<a class="btn btn-block btn-default" id="btnFindOne">Find Exiang</a>
+				<a class="btn btn-block btn-default" id="btnRemoveOne">Remove Wolverine</a>
+				<a class="btn btn-block btn-default" id="btnClearList">Clear Entire List</a>
+				
+				<br />
+				<br />
+				<textarea id="output" style="width:100%" rows="20"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="vendor/lawnchair/lawnchair-0.6.1.min.js"></script>
+	<script src="vendor/lawnchair/lawnchair-query-0.6.1.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/lawnchair.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			app.initialize();
+		});
+	</script>
+</body>
+</html>

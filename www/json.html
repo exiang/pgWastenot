@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KitchenSink</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="home.html">KitchenSink</a>
+        </div>
+      </div>
+    </nav>
+	
+	<!-- used plugins:
+		- https://github.com/mobimentum/phonegap-plugin-loading-spinner/blob/adc8b71/README.md
+		- cordova plugin add org.apache.cordova.file
+	-->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-lg-12" style="text-align:center">
+				<div id="icon"></div>
+				<div id="weather"></div>
+				<div id="location"></div>
+				
+				<a class="btn btn-block btn-default" id="btnLoadFresh">Load Fresh &amp; Cache</a>
+				<a class="btn btn-block btn-default" id="btnReadCache">Read From Cache</a>
+				
+				<br />
+				<br />
+				<textarea id="output" style="width:100%" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			app.initialize();
+		});
+	</script>
+</body>
+</html>

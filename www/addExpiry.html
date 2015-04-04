@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>WasteNot</title>
+	<link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<link href="vendor/mobiscroll/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+	<link href="vendor/mobiscroll/css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+	<link href="vendor/mobiscroll/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+	<link href="vendor/mobiscroll/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+	<link href="vendor/mobiscroll/css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+	
+	<link href="css/core.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+	
+	<!-- nav-top -->
+	<nav id="nav-top" class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<div id="brand-logo" class="navbar-brand text-left"><img src="img/logo_topleft.png" /></div>
+			<div id="brand-title" class="navbar-brand"><a href="" id="btnNavTopTitle">Create Record</a></div>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>    
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">Item 1</a></li>
+				<li><a href="">Item 2</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+	<!-- /nav-top -->
+	
+	<div class="container-fluid">
+		<div class="row nopadding">
+			<div class="col col-lg-12">
+			<!-- mainContent -->
+			<div id="mainContent">
+			
+				<div class="row">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-10 text-center"><div id="subHeader">Category</div></div>
+					<div class="col-xs-1"></div>
+				<div>
+				
+				<div class="row">
+					<div class="col-xs-12 text-center"><img src="" id="addExpiryPreview" class="img-responsive-full" /></div>
+				</div>
+				
+				<div id="form-addExpiry">
+				<div class="row ">
+					<div class="col-lg-12 nopadding">
+						<input id="inputAddExpiryCategory" class="form-control input-lg" type="text" placeholder="Category" readonly="readonly" />
+						<span class="fa fa-sort form-control-feedback" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-xs-12 nopadding">
+						<select id="inputAddExpiryItem" class="form-control input-lg" type="text" placeholder="Item" readonly="readonly">
+							<option value="">Select</option>
+						</select>
+						<span class="fa fa-sort form-control-feedback" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-xs-12 nopadding">
+						<input id="inputAddExpiryDate" class="form-control input-lg" type="text" placeholder="Expired Date" readonly="readonly" />
+						<span class="fa fa-sort form-control-feedback" aria-hidden="true"></span>
+					</div>
+				</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-12 text-center"><a class="btn" id="btnAddExpiryRecord"><img src="img/btn.set.png" /></a></div>
+				</div>
+				
+				
+			</div>
+			<!-- /mainContent -->
+			</div>
+		</div>
+	</div>
+	
+	<div id="push"></div>
+	
+	<!-- nav-bottom -->
+	<div id="nav-bottom" class="navbar-fixed-bottom">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-xs-4">
+				<a href="" id="btnNavBottomFriend"class="btn-navBottom"><img src="img/btn.friend.png" class=""/></a>
+			</div>
+			<div class="col col-xs-4">
+				<a href="" id="btnNavBottomList"class="btn-navBottom"><img src="img/btn.list.png" class="" /></a>
+			</div>
+			<div class="col col-xs-4">
+				<a href="" id="btnNavBottomAdd" class="btn-navBottom"><img src="img/btn.add.png" class="" /></a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- /nav-bottom -->
+
+
+    	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="vendor/mobiscroll/js/mobiscroll.core.js"></script>
+    <script src="vendor/mobiscroll/js/mobiscroll.frame.js"></script>
+    <script src="vendor/mobiscroll/js/mobiscroll.scroller.js"></script>
+    <script src="vendor/mobiscroll/js/mobiscroll.util.datetime.js"></script>
+    <script src="vendor/mobiscroll/js/mobiscroll.datetimebase.js"></script>
+    <script src="vendor/mobiscroll/js/mobiscroll.datetime.js"></script>
+    <script src="vendor/mobiscroll/js/mobiscroll.select.js"></script>
+    <script src="vendor/mobiscroll/js/i18n/mobiscroll.i18n.en-UK.js"></script>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/addExpiry.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.gPageCode = "addExpiry";
+			
+			gInit();
+			uiInit();
+			
+			if($.dev)
+			{
+				if(!$.isGInited) gInit();
+				pageInit();
+			}
+			else
+			{
+				app.initialize();
+			}
+		});
+	</script>
+</body>
+</html>
