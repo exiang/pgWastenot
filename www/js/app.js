@@ -1,7 +1,7 @@
 // is this development?
 $.dev = true;
 // is this running on mobile devices? (use plugin), set false if you are running from desktop browser
-$.mobile = true;
+$.mobile = false;
 $.db;
 $.gBaseApiUrl = "http://arcinteractive.com.my/wastenot";
 $.gCategories = "";
@@ -413,14 +413,14 @@ function registerNotif(lastInsertedId, year, month, day, callback)
 			if(countTheDayExpiryItem <= 1)
 			{
 				var now  = new Date().getTime(),
-				after5sec = new Date(now + 5*1000);
+				afterXsec = new Date(now + 60 * 1000);
 				
 				var timestamp = new Date(year, month-1, day).getTime();
-				if($.dev) timestamp = after5sec;
+				if($.dev) timestamp = afterXsec;
 				//console.log(timestamp);
 				
-				
 				cordova.plugins.notification.local.schedule({
+					id: notifId,
 					text: "You have 1 item expiring today",
 					at: timestamp,
 				});

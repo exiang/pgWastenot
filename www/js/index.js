@@ -23,6 +23,10 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        
+        // local notification	
+		cordova.plugins.notification.local.on("click", function (notification) {
+			// goto home
+			window.location = "home.html";	
+		});
     }
 };
