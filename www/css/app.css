@@ -136,9 +136,15 @@
 	margin:0; padding:0;
 }
 
-#addExpiryPreview, #viewExpiryPreview
+#addExpiryPreview, #viewExpiryPreview, #canvasPreview
 {
-	max-width:320px !important;
+	width:100%;
+	max-width:480px !important;
+	margin:0 auto;
+}
+#form-addExpiryCustom
+{
+	max-width:480px; 
 	margin:0 auto;
 }
 #viewRecipePreview
@@ -203,6 +209,12 @@
 	text-align:center;
 	margin-bottom:0.8em;
 	margin-top:1em;
+}
+
+.expiryInDayList
+{
+	margin-left:-15px !important;
+	margin-right:-15px !important;
 }
 
 .expiryInDayList .thumbnail

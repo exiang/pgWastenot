@@ -95,6 +95,11 @@ function uiInit()
 	$('#inputAddExpiryCategory').on('click', function(e){
 		go('add');
 	});
+	
+	// add custom expiry item
+	$('#btnAddExpiryCustom').on('click', function(e){
+		go('addExpiryCustom');
+	});
 }
 
 

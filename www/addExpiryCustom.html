@@ -24,7 +24,7 @@
 	<div class="container">
 		<div class="navbar-header">
 			<div id="brand-logo" class="navbar-brand text-left"><img src="img/logo_topleft.png" /></div>
-			<div id="brand-title" class="navbar-brand"><a href="" id="btnNavTopTitle">Create Record</a></div>
+			<div id="brand-title" class="navbar-brand"><a href="" id="btnNavTopTitle">Add Custom Item</a></div>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -47,44 +47,30 @@
 			<!-- mainContent -->
 			<div id="mainContent">
 			
-				<div class="row">
-					<div class="col-xs-2"></div>
-					<div class="col-xs-8 text-center"><div id="subHeader">Category</div></div>
-					<div class="col-xs-2 text-right"><a id="btnAddExpiryCustom" class="btn btn-sm nopadding" href="#"><i class="fa fa-camera"></i></a></div>
-				<div>
-				
-				<div class="row">
-					<div class="col-xs-12 text-center"><img src="" id="addExpiryPreview" class="img-responsive-full" /></div>
+				<div style='text-align:center'>
+					<a id="btnGetImageUrl" href="#"><img id="canvasPreview" src="img/placeholder.jpg" /></a>
+					<div><small class="text-muted">Tap on image to launch camera</small></div>
 				</div>
 				
-				<div id="form-addExpiry">
-				<div class="row ">
-					<div class="col-lg-12 nopadding">
-						<input id="inputAddExpiryCategory" class="form-control input-lg" type="text" placeholder="Category" readonly="readonly" />
-						<span class="fa fa-sort form-control-feedback" aria-hidden="true"></span>
+				<form id="form-addExpiryCustom">
+				<div id="field-categoryName" class="form-group">
+					 <label for="input-categoryName">Category</label>
+					<input id="input-categoryName" type="text" class="form-control" placeholder="" readonly="readonly" />
+				</div>
+				
+				<div id="field-itemName" class="form-group">
+					 <label for="input-itemName">Item</label>
+					<input id="input-itemName" type="text" class="form-control" placeholder="Name it" />
+				</div>
+				
+				<div class="form-group">
+					<div class="btn-group btn-group-justified" role="group" >
+						<a href="#" id="btnExpiryCustomSubmit" class="btn btn-success">Add</a>
+						<a href="#" id="btnExpiryCustomCancel" class="btn btn-danger">Cancel</a>
 					</div>
 				</div>
-				<div class="row ">
-					<div class="col-xs-12 nopadding">
-						<select id="inputAddExpiryItem" class="form-control input-lg" type="text" placeholder="Item" readonly="readonly">
-							<option value="">Select</option>
-						</select>
-						<span class="fa fa-sort form-control-feedback" aria-hidden="true"></span>
-					</div>
-				</div>
-				<div class="row ">
-					<div class="col-xs-12 nopadding">
-						<input id="inputAddExpiryDate" class="form-control input-lg" type="text" placeholder="Expired Date" readonly="readonly" />
-						<span class="fa fa-sort form-control-feedback" aria-hidden="true"></span>
-					</div>
-				</div>
-				</div>
 				
-				<div class="row">
-					<div class="col-xs-12 text-center"><a class="btn" id="btnAddExpiryRecord"><img src="img/btn.set.png" /></a></div>
-				</div>
-				
-				
+				<form>
 			</div>
 			<!-- /mainContent -->
 			</div>
@@ -126,10 +112,10 @@
 	
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/addExpiry.js"></script>
+	<script type="text/javascript" src="js/addExpiryCustom.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$.gPageCode = "addExpiry";
+			$.gPageCode = "addExpiryCustom";
 			
 			gInit();
 			uiInit();

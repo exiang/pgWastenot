@@ -1,7 +1,7 @@
 // is this development?
-$.dev = true;
+$.dev = false;
 // is this running on mobile devices? (use plugin), set false if you are running from desktop browser
-$.mobile = false;
+$.mobile = true;
 $.db;
 $.gBaseApiUrl = "http://arcinteractive.com.my/wastenot";
 $.gCategories = "";
@@ -56,7 +56,14 @@ function getDeviceType()
 // eg: 	"uploads/category/main.1.jpg"
 function getImageUrl(partial)
 {
-	return $.gBaseApiUrl + '/'+partial;
+	if(partial.substring(0, 8) == "uploads/")
+	{
+		return $.gBaseApiUrl + '/'+partial;
+	}
+	else
+	{
+		return partial;
+	}
 }
 
 function go(page, params)
@@ -99,14 +106,19 @@ function gInit()
 	else*/
 	{
 		// init db
-		$.db = openDatabase('wastenot14', '1.0', 'wastenot database', 2 * 1024 * 1024);
+		$.db = openDatabase('wastenot19', '1.0', 'wastenot database', 2 * 1024 * 1024);
 	}
 	
 	// create tables
 	$.db.transaction(function(tx) {
 		tx.executeSql('CREATE TABLE IF NOT EXISTS category (id integer PRIMARY KEY ASC, rid integer, code text, group_id integer, title text, image_main text,  is_active integer, UNIQUE(rid, code)) ');
-		tx.executeSql('CREATE TABLE IF NOT EXISTS item (id integer PRIMARY KEY ASC, rid integer, title text, category_id integer, image_main text, is_active integer, UNIQUE(rid)) ');
+		tx.executeSql('CREATE INDEX IF NOT EXISTS idx_group_id ON category (group_id)');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS item (id integer PRIMARY KEY ASC, rid integer, title text, category_id integer NOT NULL, image_main text, is_active integer) ');
+		tx.executeSql('CREATE INDEX IF NOT EXISTS idx_category_id ON item (category_id)');
+		//tx.executeSql('CREATE TABLE IF NOT EXISTS item (id integer PRIMARY KEY ASC, rid integer null, title text, category_id integer, image_main text, is_active integer, UNIQUE(rid)) ');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS expiry (id integer PRIMARY KEY ASC, item_id integer, title text, image_main text, year_expired, month_expired, day_expired) ');
+		tx.executeSql('CREATE INDEX IF NOT EXISTS idx_item_id ON expiry (item_id)');
+		tx.executeSql('CREATE INDEX IF NOT EXISTS idx_expired ON expiry (year_expired, month_expired, day_expired)');
 	});
 	
 	getCategoriesFromDb();
@@ -368,6 +380,31 @@ function getRemoteItemList()
 	});
 }
 
+function addCustomItem(title, category_id, image_main, callback)
+{
+	trace("call addCustomItem()");
+	console.log(title, category_id, image_main);
+	
+	//trace($.gCategories, $.gCategories.length);
+	if($.db)
+	{
+		$.db.transaction(function(tx) {
+			tx.executeSql(
+				"INSERT INTO item (rid, category_id, title, image_main, is_active) VALUES (?,?,?,?,?)", 
+				["", category_id, title, image_main, '1'],
+				function(tx, results){
+					var lastInsertedId = results.insertId;
+					//console.log(lastInsertedId);
+					if (typeof(callback) == 'function') getItemsFromDb(callback);
+				},
+				function (tx, error) {
+					noticeAlert("Error : " + error.message );
+				}
+			);
+		});
+	}
+}
+
 //
 // expiry
 function addExpiry(category_title, category_id, title, item_id, image_main, year, month, day, callback)
@@ -383,6 +420,9 @@ function addExpiry(category_title, category_id, title, item_id, image_main, year
 				var lastInsertedId = results.insertId;
 				//console.log(lastInsertedId);
 				if (typeof(callback) == 'function') callback(lastInsertedId, year, month, day);
+			},
+			function (tx, error) {
+				noticeAlert("Error : " + error.message );
 			}
 		);
 	});
@@ -441,12 +481,12 @@ function registerNotif(lastInsertedId, year, month, day, callback)
 			if(countTheDayExpiryItem <= 1)
 			{
 				var timestamp = new Date(year, month-1, day).getTime();
-				alert(timestamp);
+				noticeAlert(timestamp);
 			}
 			// already got items on that day
 			else
 			{
-				alert("update, notifId:"+notifId);
+				noticeAlert("update, notifId:"+notifId);
 			}
 		}
 		
