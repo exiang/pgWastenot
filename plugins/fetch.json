@@ -55,5 +55,11 @@
             "url": "https://github.com/brodysoft/Cordova-SQLitePlugin",
             "subdir": "."
         }
+    },
+    "nl.x-services.plugins.socialsharing": {
+        "source": {
+            "type": "registry",
+            "id": "nl.x-services.plugins.socialsharing"
+        }
     }
 }

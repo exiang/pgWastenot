@@ -38,7 +38,7 @@ function renderExpiryItem(data)
 	
 	$('#viewExpiryPreview').attr('src', getImageUrl(data.image_main));
 	$('#viewExpiryTitle').html(data.title);
-	$('#viewExpiryExpiredIn').html(daysFromNow(data.year_expired, data.month_expired, data.day_expired) + " days");
+	$('#viewExpiryExpiredIn').html(daysFromNow(data.year_expired, data.month_expired, data.day_expired) + " day(s)");
 	$('#viewExpiryExpiredInDetail').html(data.year_expired+" "+getMonthName(data.month_expired-1)+" "+data.day_expired);
 	//console.log(data.id);
 	$('#btnViewRecipe').attr('data-itemId', data.item_id);
@@ -55,6 +55,8 @@ function renderExpiryItem(data)
 			$('#btnViewRecipe').hide();
 		}
 	});
+	
+	viewExpiryItem = data;
 }
 
 
@@ -63,7 +65,7 @@ function uiInit()
 	trace("call uiInit()");
 	
 	viewExpiryId = getLocalStorage('viewExpiryId');
-	viewExpiryItem = getExpiryById(viewExpiryId, renderExpiryItem);
+	getExpiryById(viewExpiryId, renderExpiryItem);
 }
 
 
@@ -71,5 +73,22 @@ function pageInit()
 {
 	trace("call pageInit()");	
 	
+	$('#btnShare').on('click', function(e){
+		var title = "WasteNot"
+		var dayFromNow = daysFromNow(viewExpiryItem.year_expired, viewExpiryItem.month_expired, viewExpiryItem.day_expired);
+		var msg = 'My '+viewExpiryItem.title + ' expiring in '+dayFromNow+' days.';
+		if(dayFromNow == 0)
+		{
+			msg = 'My '+viewExpiryItem.title + ' expired in today.';
+		}
+		else if(dayFromNow == 1)
+		{
+			msg = 'My '+viewExpiryItem.title + ' expiring in '+dayFromNow+' day.';
+		}
+		
+		window.plugins.socialsharing.share(
+			msg, title, getImageUrl(viewExpiryItem.image_main)
+		);
+	});
 	
 }

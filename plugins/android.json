@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"SpinnerPlugin\"><param name=\"android-package\" value=\"it.mobimentum.phonegapspinnerplugin.SpinnerPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -96,7 +100,7 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
+                            "count": 3
                         }
                     ]
                 }
@@ -123,6 +127,9 @@
             "PACKAGE_NAME": "com.yeesiang.wastenot"
         },
         "it.mobimentum.phonegapspinnerplugin": {
+            "PACKAGE_NAME": "com.yeesiang.wastenot"
+        },
+        "nl.x-services.plugins.socialsharing": {
             "PACKAGE_NAME": "com.yeesiang.wastenot"
         }
     },
