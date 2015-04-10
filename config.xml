@@ -4,10 +4,21 @@
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="exiang83@yahoo.com" href="http://www.yeesiang.com">
+        exiang
     </author>
     <content src="index.html" />
 	<icon src="icon.png" />
     <access origin="*" />
+	
+	<gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
+	<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+	<gap:plugin name="nl.x-services.plugins.toast" />
+	<gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
+	<gap:plugin name="org.apache.cordova.dialogs" />
+	<gap:plugin name="org.apache.cordova.file" />
+	<gap:plugin name="org.apache.cordova.file-transfer" />
+	<gap:plugin name="org.apache.cordova.camera" />
+	<gap:plugin name="org.apache.cordova.device" />
+	
 </widget>
