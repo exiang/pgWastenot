@@ -12,8 +12,14 @@
         exiang
     </author>
     <content src="index.html" />
-	<icon src="icon.png" />
+	<icon src="res/icon.png" />
+	<preference name="SplashScreenDelay" value="s0" />
     <access origin="*" />
+
+    <platform name="ios">
+	    <!-- images are determined by width and height. The following are supported -->
+	    <splash src="res/screen/ios/screen-iphone-portrait.png" width="320" height="480"/>
+	</platform>
 	
 	<gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
 	<gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
