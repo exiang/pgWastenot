@@ -109,33 +109,33 @@
     },
     "installed_plugins": {
         "com.brodysoft.sqlitePlugin": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "de.appplant.cordova.plugin.local-notification": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "it.mobimentum.phonegapspinnerplugin": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "nl.x-services.plugins.socialsharing": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "nl.x-services.plugins.toast": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "org.apache.cordova.dialogs": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         },
         "org.apache.cordova.file": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         }
     },
     "dependent_plugins": {
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.arcww.my.inhouse.wastenot"
+            "PACKAGE_NAME": "com.arcww.my.inhouse.dev.wastenot"
         }
     }
 }
